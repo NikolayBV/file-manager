@@ -5,10 +5,6 @@ import {dirname} from "node:path";
 export const separateDataIn = (data) => {
     const command = data.toString().split('\n')[0];
     switch (true) {
-        case command.startsWith('cd'):
-            return 'cd';
-        case command.startsWith('up'):
-            return 'up';
         case command.startsWith('add'):
             return 'add';
         case command.startsWith('cat'):
@@ -30,7 +26,7 @@ export const separateDataIn = (data) => {
         case command.startsWith('decompress'):
             return 'decompress';
         default:
-            return command;
+            return command.split(' ')[0];
     }
 }
 
