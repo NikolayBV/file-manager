@@ -1,19 +1,18 @@
-import {stdin, chdir, stdout} from 'node:process';
-import {join} from 'node:path'
-import {errorLogs, getWorkDirectory, getCurrentDirectory, getUserName, separateDataIn, welcomeLogs} from "./utils.js";
-import {exitFromApp} from "./exit.js";
-import {filesList} from "./filesList.js";
-import {up} from "./up.js";
-import {cd} from "./cd.js";
-import {cat} from "./cat.js";
-import {add} from "./add.js";
-import {rn} from "./rn.js";
-import {copy} from "./cp.js";
-import {remove} from "./rm.js";
-import {operationSystem} from "./os.js";
-import {calcHash} from "./calcHash.js";
-import {compress} from "./compress.js";
-import {decompress} from "./decompress.js";
+import {stdin, stdout} from 'node:process';
+import {errorLogs, getCurrentDirectory, getUserName, separateDataIn, welcomeLogs} from "./src/utils.js";
+import {exitFromApp} from "./src/common/exit.js";
+import {filesList} from "./src/navigation/filesList.js";
+import {up} from "./src/navigation/up.js";
+import {cd} from "./src/navigation/cd.js";
+import {cat} from "./src/filesOperations/cat.js";
+import {add} from "./src/filesOperations/add.js";
+import {rn} from "./src/filesOperations/rn.js";
+import {copy} from "./src/filesOperations/cp.js";
+import {remove} from "./src/filesOperations/rm.js";
+import {operationSystem} from "./src/os/os.js";
+import {calcHash} from "./src/hash/calcHash.js";
+import {compress} from "./src/zip/compress.js";
+import {decompress} from "./src/zip/decompress.js";
 
 const onAppStarted = async () => {
     const userName = getUserName();

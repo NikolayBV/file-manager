@@ -1,6 +1,6 @@
 import {createReadStream} from 'node:fs'
 import {stdout} from "node:process";
-import {getCurrentDirectory} from "./utils.js";
+import {getCurrentDirectory} from "../utils.js";
 
 export const cat = async (pathToFile) => {
   try {

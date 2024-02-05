@@ -1,5 +1,5 @@
 import {fileURLToPath} from "node:url";
-import {argv, stdout, cwd} from 'node:process';
+import {argv, cwd, stdout} from 'node:process';
 import {dirname} from "node:path";
 
 export const separateDataIn = (data) => {
@@ -32,7 +32,7 @@ export const separateDataIn = (data) => {
 
 export const getWorkDirectory = () => {
     const __filename = fileURLToPath(import.meta.url)
-    return dirname(__filename.toString())
+    return dirname(__filename);
 }
 export const getCurrentDirectory = () => {
     return cwd()

@@ -1,5 +1,5 @@
 import {readdir, stat} from 'node:fs/promises';
-import {getCurrentDirectory} from "./utils.js";
+import {getCurrentDirectory} from "../utils.js";
 
 export const filesList = async () => {
     const dir = await readdir(getCurrentDirectory())

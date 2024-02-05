@@ -1,4 +1,4 @@
-import {getCurrentDirectory} from "./utils.js";
+import {getCurrentDirectory} from "../utils.js";
 import {join} from "node:path";
 import {chdir, cwd, stdout} from "node:process";
 

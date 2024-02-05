@@ -1,6 +1,6 @@
 import {cpus, EOL, homedir, userInfo, arch} from 'node:os'
 import {stdout} from "node:process";
-import {getCurrentDirectory} from "./utils.js";
+import {getCurrentDirectory} from "../utils.js";
 
 export const operationSystem = (arg) => {
     switch (arg) {

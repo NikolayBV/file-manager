@@ -1,7 +1,7 @@
 import {access, rm} from "node:fs/promises";
 import {constants} from "node:fs";
 import {stdout} from "node:process";
-import {getCurrentDirectory} from "./utils.js";
+import {getCurrentDirectory} from "../utils.js";
 
 export const remove = async (fileName) => {
     try {

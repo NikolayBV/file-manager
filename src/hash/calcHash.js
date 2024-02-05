@@ -1,9 +1,9 @@
 import {createHash} from "crypto";
-import path from "path";
+import {join} from "path";
 import {createReadStream} from "fs";
 import {stat} from "node:fs/promises";
 import {stdout} from "node:process";
-import {getCurrentDirectory, getWorkDirectory} from "./utils.js";
+import {getCurrentDirectory} from "../utils.js";
 
 export const calcHash = async (filePath) => {
     try {
@@ -11,7 +11,7 @@ export const calcHash = async (filePath) => {
         if (fileStat.isFile()) {
             const hash = createHash("sha256");
             const input = createReadStream(
-                path.join(getWorkDirectory(), filePath)
+                join(getCurrentDirectory(), filePath)
             );
 
             input.pipe(hash).setEncoding("hex").pipe(stdout)

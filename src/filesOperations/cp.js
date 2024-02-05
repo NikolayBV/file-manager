@@ -2,7 +2,7 @@ import { createReadStream, createWriteStream } from "node:fs";
 import {rm} from 'node:fs/promises'
 import {join, basename} from "node:path";
 import {stdout} from "node:process";
-import {getCurrentDirectory, getWorkDirectory} from "./utils.js";
+import {getCurrentDirectory, getWorkDirectory} from "../utils.js";
 
 export const copy = async (sourcePath, destinationDir, isRemove = false) => {
     try {

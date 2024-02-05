@@ -1,7 +1,7 @@
 import {pipeline} from "stream/promises";
 import {createReadStream, createWriteStream} from "fs";
 import {join} from "path";
-import {getCurrentDirectory, getWorkDirectory} from "./utils.js";
+import {getCurrentDirectory, getWorkDirectory} from "../utils.js";
 import {createBrotliDecompress} from "zlib";
 import {stdout} from "node:process";
 
