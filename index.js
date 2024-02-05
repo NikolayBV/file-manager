@@ -10,6 +10,10 @@ import {add} from "./add.js";
 import {rn} from "./rn.js";
 import {copy} from "./cp.js";
 import {remove} from "./rm.js";
+import {operationSystem} from "./os.js";
+import {calcHash} from "./calcHash.js";
+import {compress} from "./compress.js";
+import {decompress} from "./decompress.js";
 
 const onAppStarted = async () => {
     const userName = getUserName();
@@ -46,6 +50,18 @@ const onAppStarted = async () => {
                     break;
                 case 'rm':
                     remove(data.toString().split('\n')[0].split(' ')[1])
+                    break;
+                case 'os':
+                    operationSystem(data.toString().split('\n')[0].split(' ')[1])
+                    break;
+                case 'hash':
+                    calcHash(data.toString().split('\n')[0].split(' ')[1])
+                    break;
+                case 'compress':
+                    compress(data.toString().split('\n')[0].split(' ')[1], data.toString().split('\n')[0].split(' ')[2])
+                    break;
+                case 'decompress':
+                    decompress(data.toString().split('\n')[0].split(' ')[1], data.toString().split('\n')[0].split(' ')[2])
                     break;
                 default:
                     errorLogs()

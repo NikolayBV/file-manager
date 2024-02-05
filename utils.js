@@ -3,23 +3,30 @@ import {argv, stdout, cwd} from 'node:process';
 import {dirname} from "node:path";
 
 export const separateDataIn = (data) => {
-    if (data.toString().split('\n')[0].startsWith('cd')) {
-        return 'cd';
-    } else if (data.toString().split('\n')[0].startsWith('add')) {
-        return 'add';
-    } else if (data.toString().split('\n')[0].startsWith('cat')) {
-        return 'cat'
-    } else if (data.toString().split('\n')[0].startsWith('rn')) {
-        return 'rn'
-    } else if (data.toString().split('\n')[0].startsWith('cp')) {
-        return 'cp'
-    } else if (data.toString().split('\n')[0].startsWith('mv')) {
-        return 'mv'
-    }
-    else if (data.toString().split('\n')[0].startsWith('rm')) {
-        return 'rm'
-    } else {
-        return data.toString().split('\n')[0]
+    const command = data.toString().split('\n')[0];
+    switch (true) {
+        case command.startsWith('add'):
+            return 'add';
+        case command.startsWith('cat'):
+            return 'cat';
+        case command.startsWith('rn'):
+            return 'rn';
+        case command.startsWith('cp'):
+            return 'cp';
+        case command.startsWith('mv'):
+            return 'mv';
+        case command.startsWith('rm'):
+            return 'rm';
+        case command.startsWith('os'):
+            return 'os';
+        case command.startsWith('hash'):
+            return 'hash';
+        case command.startsWith('compress'):
+            return 'compress';
+        case command.startsWith('decompress'):
+            return 'decompress';
+        default:
+            return command;
     }
 }
 
